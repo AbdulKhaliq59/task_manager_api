@@ -1,15 +1,24 @@
 config:
-  target: 'http://localhost:3000'
+  target: "http://localhost:3000"
   phases:
     - duration: 60
-      arrivalRate: 5
-      name: "Warm up"
-    - duration: 120
-      arrivalRate: 10
-      name: "Load test"
+      arrivalRate: 100
+      name: "Test with 100 requests/sec"
+    - duration: 60
+      arrivalRate: 300
+      name: "Test with 300 requests/sec"
+    - duration: 60
+      arrivalRate: 500
+      name: "Test with 500 requests/sec"
+    - duration: 60
+      arrivalRate: 5000
+      name: "Test with 5000 requests/sec"
+    - duration: 60
+      arrivalRate: 10000
+      name: "Test with 10000 requests/sec"
   defaults:
     headers:
-      content-type: 'application/json'
+      content-type: "application/json"
 
 scenarios:
   - name: "Test API endpoints"
