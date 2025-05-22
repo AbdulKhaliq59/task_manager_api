@@ -1,0 +1,29 @@
+{
+  "name": "task_manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "test:coverage": "node ./node_modules/jest/bin/jest.js --coverage",
+    "test:coverage-json": "node ./node_modules/jest/bin/jest.js --coverage --coverageReporters=json",
+    "test:coverage-html": "node ./node_modules/jest/bin/jest.js --coverage --coverageReporters=html",
+    "load-test": "node ./node_modules/artillery/bin/run run ./tests/performance/load-test.yml",
+    "load-test-json": "node ./node_modules/artillery/bin/run run ./tests/performance/load-test.yml -o artillery-report.json",
+    "perf-test": "k6 run ./tests/performance/k6-test.js",
+    "perf-test-cloud": "k6 cloud ./tests/performance/k6-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.23",
+    "jest": "^29.7.0",
+    "k6": "^0.0.0",
+    "supertest": "^7.1.1"
+  }
+}
